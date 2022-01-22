@@ -1,10 +1,15 @@
 import Header from './include/Header';
 import Footer from './include/Footer';
 import Title from './include/Title';
-import { useState, useEffect, useRef } from 'react';
-import { getThingspeakFeedsData } from '../services/getData';
 import moment from 'moment';
 import Timer from './include/Timer';
+
+import { useState, useEffect, useRef } from 'react';
+import { getThingspeakFeedsData } from '../services/getData';
+
+import imageTemp from '../images/temperature.jpg'
+import imageBodyTemp from '../images/body-temperature.jpg'
+import imagePulse from '../images/pulse.jpg'
 
 const Home = (props) => {
     const [temperature, setTemperature] = useState(0);
@@ -89,7 +94,7 @@ const Home = (props) => {
                 <div className="col">
                     <div className="card h-100">
                         <div className="text-center">
-                            <img src="images/temperature.jpg" style={{width : "150px", height : "150px"}} className="card-img-top img-fluid" alt="Atmospheric Temperature" />
+                            <img src={ imageTemp } style={{width : "150px", height : "150px"}} className="card-img-top img-fluid" alt="Atmospheric Temperature" />
                         </div>
                         <div className="card-body">
                             <div className="d-flex flex-row bd-highlight mb-3">
@@ -109,7 +114,7 @@ const Home = (props) => {
                 <div className="col">
                     <div className="card h-100">
                         <div className="text-center">
-                            <img src="images/body-temperature.jpg" style={{width : "150px", height : "150px"}} className="card-img-top" alt="Body Temperature" />
+                            <img src={ imageBodyTemp } style={{width : "150px", height : "150px"}} className="card-img-top" alt="Body Temperature" />
                         </div>
                         <div className="card-body">
                             <div className="d-flex flex-row bd-highlight mb-3">
@@ -129,7 +134,7 @@ const Home = (props) => {
                 <div className="col">
                     <div className="card h-100">
                         <div className="text-center">
-                            <img src="images/pulse.jpg" style={{width : "150px", height : "150px"}} className="card-img-top" alt="Pulse Oximeter" />
+                            <img src={ imagePulse } style={{width : "150px", height : "150px"}} className="card-img-top" alt="Pulse Oximeter" />
                         </div>
                         <div className="card-body">
                             <div className="d-flex flex-row bd-highlight mb-3">

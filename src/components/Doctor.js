@@ -6,7 +6,7 @@ import { variables } from './include/Variables';
 import { getDoctorList, getRoles } from '../services/getData';
 import Timer from './include/Timer';
 
-const api_endpoint = "doctor/";
+const api_endpoint = "user/doctor/";
 const Doctor = (props) => {
     
     const [doctors, setDoctor] = useState([]);
@@ -22,8 +22,9 @@ const Doctor = (props) => {
     let mounted = useRef(false);
     const hideModal = useRef();
 
+
     useEffect(() => {
-        const api_endpoint = "doctor/";
+        const api_endpoint = "user/doctor/";
         isMounted.current = true;
         getDoctorList(api_endpoint)
         .then(data => {
@@ -46,8 +47,9 @@ const Doctor = (props) => {
         return () => isMounted.current = false;
     }, [alert]);
 
+
     useEffect(() => {
-        const api_endpoint = "roles/";
+        const api_endpoint = "user/roles/";
         mounted.current = true;
         getRoles(api_endpoint)
         .then(data => {
@@ -60,6 +62,7 @@ const Doctor = (props) => {
         });
         return () => mounted.current = false;
     }, []);
+
 
     const editDoctor = (doctor) => {
         setID(doctor.id);

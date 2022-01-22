@@ -6,7 +6,7 @@ import { getPatientList,getGender } from '../services/getData';
 import { variables } from './include/Variables';
 import Timer from './include/Timer';
 
-const api_endpoint = 'patient/';
+const api_endpoint = 'user/patient/';
 
 const Patient = (props) => {
     
@@ -32,7 +32,7 @@ const Patient = (props) => {
     }
     
     useEffect(() => {
-        const api_endpoint = "patient/";
+        const api_endpoint = "user/patient/";
         isMounted.current = true;
         getPatientList(api_endpoint)
         .then(data => {
@@ -56,7 +56,7 @@ const Patient = (props) => {
     }, [alert]);
     
     useEffect(() => {
-        const api_endpoint = "gender/";
+        const api_endpoint = "user/gender/";
         getGender(api_endpoint)
         .then(data => {
             if(mounted.current) {

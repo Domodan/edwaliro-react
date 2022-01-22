@@ -16,6 +16,7 @@ const AddDoctor = (props) => {
     const [alert, setAlert] = useState(false);
     const navigate = useNavigate();
     
+    
     const clearDoctor = () => {
         setFirstName('');
         setLastName('');
@@ -23,6 +24,7 @@ const AddDoctor = (props) => {
         setPhone('');
         setRole('...');
     }
+
 
     useEffect(() => {
         const api_endpoint = "roles/";
@@ -42,10 +44,11 @@ const AddDoctor = (props) => {
         });
     }, [alert, navigate]);
 
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const url = variables.API_URL + "doctor/"
+        const url = variables.API_URL + "user/doctor/"
         const method = "POST"
         const contentType = "application/json"
         const accept = "application/json"

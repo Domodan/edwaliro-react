@@ -17,6 +17,7 @@ const AddDoctor = (props) => {
     const [alert, setAlert] = useState(false);
     const navigate = useNavigate();
     
+    
     const clearPatient = () => {
         setFirstName('');
         setLastName('');
@@ -25,8 +26,9 @@ const AddDoctor = (props) => {
         setGender('...');
     }
     
+
     useEffect(() => {
-        const api_endpoint = "gender/";
+        const api_endpoint = "user/gender/";
         getGender(api_endpoint)
         .then(data => {
             if(alert) {
@@ -43,10 +45,11 @@ const AddDoctor = (props) => {
         });
     }, [alert, navigate]);
 
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const url = variables.API_URL + "patient/"
+        const url = variables.API_URL + "user/patient/"
         const method = "POST"
         const contentType = "application/json"
         const accept = "application/json"
