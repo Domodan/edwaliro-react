@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && cp build/favicon.ico build/static/favicon.ico && cp build/manifest.json build/static/manifest.json && cp build/android-chrome-192x192.png build/static/android-chrome-192x192.png",
+    "build": "react-scripts build && cp build/favicon.ico build/static/favicon.ico && cp build/manifest.json build/static/manifest.json && cp build/192x192.png build/static/192x192.png && cp build/512x512.png build/static/512x512.png",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

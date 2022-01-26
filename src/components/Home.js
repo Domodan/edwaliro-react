@@ -7,9 +7,9 @@ import Timer from './include/Timer';
 import { useState, useEffect, useRef } from 'react';
 import { getThingspeakFeedsData } from '../services/getData';
 
-import imageTemp from '../images/temperature.jpg'
-import imageBodyTemp from '../images/body-temperature.jpg'
-import imagePulse from '../images/pulse.jpg'
+import imageTemp from './images/temperature.jpg';
+import imageBodyTemp from './images/body-temperature.jpg';
+import imagePulse from './images/pulse.jpg';
 
 const Home = (props) => {
     const [temperature, setTemperature] = useState(0);
