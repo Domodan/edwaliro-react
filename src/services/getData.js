@@ -23,7 +23,7 @@ export async function getGender(api_endpoint) {
 }
 
 export async function getThingspeakFeedsData() {
-    const url = 'https://api.thingspeak.com/channels/1596329/feeds.json?api_key=PY5EDT094TON962X';
+    const url = 'https://api.thingspeak.com/channels/1596329/feeds.json?api_key=PY5EDT094TON962X&results=1';
     const response = await fetch(url);
     return await response.json();
 }

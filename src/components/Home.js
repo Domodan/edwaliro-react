@@ -21,9 +21,10 @@ const Home = (props) => {
     useEffect(() => {
         getThingspeakFeedsData()
         .then((data) => {
-            const temp = Math.round((26 + Math.random() * (30-26)) * 10)/10;
-            setTemperature(temp);
-            // setTemperature(data.feeds[9].field1);
+            // const temp = Math.round((26 + Math.random() * (30-26)) * 10)/10;
+            // setTemperature(temp);
+            setTemperature(data.feeds[0].field1);
+            console.log("Temperature:", data.feeds[0].field1);
         })
         .catch((error) => {
             console.log("Error: ", error);
@@ -41,9 +42,10 @@ const Home = (props) => {
         const realTimeData = setInterval(() => {
             getThingspeakFeedsData()
             .then((data) => {
-                // setBodyTemperature(36.5);
-                // setOxygenSaturation(98);
-                // setTemperature(data.feeds[9].field1);
+                setBodyTemperature(data.feeds[0].field5);
+                setOxygenSaturation(data.feeds[0].field4);
+                setTemperature(data.feeds[0].field1);
+                console.log("Body Temperature:", data.feeds[0].field5);
             })
             .catch((error) => {
                 console.log("Error: ", error);
@@ -57,12 +59,12 @@ const Home = (props) => {
             }
             setLastUpdated(seconds);
             
-            const bodyTemp = Math.round((34 + Math.random() * (37-34)) * 10)/10;
-            setBodyTemperature(bodyTemp);
-            const temp = Math.round((26 + Math.random() * (30-26)) * 10)/10;
-            setTemperature(temp);
-            const oxygenSat = Math.round((90 + Math.random() * (100-90)));
-            setOxygenSaturation(oxygenSat);
+            // const bodyTemp = Math.round((34 + Math.random() * (37-34)) * 10)/10;
+            // setBodyTemperature(bodyTemp);
+            // const temp = Math.round((26 + Math.random() * (30-26)) * 10)/10;
+            // setTemperature(temp);
+            // const oxygenSat = Math.round((90 + Math.random() * (100-90)));
+            // setOxygenSaturation(oxygenSat);
 
         }, 10 * 1000);
         
