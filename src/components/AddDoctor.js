@@ -27,7 +27,7 @@ const AddDoctor = (props) => {
 
 
     useEffect(() => {
-        const api_endpoint = "roles/";
+        const api_endpoint = "user/roles/";
         getRoles(api_endpoint)
         .then(data => {
             if(alert) {
